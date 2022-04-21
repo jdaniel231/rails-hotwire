@@ -1,14 +1,29 @@
-<div class="w-full">
+<div class="h-full w-full absolute">
+
   <% if notice.present? %>
     <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
-  <% end %>
+  <% end %>  
 
-  <div class="flex justify-between items-center">
-    <h1 class="font-bold text-4xl">Tts</h1>
-    <%= link_to 'New tt', new_tt_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+  <nav class="w-full mx-auto bg-white shadow">
+    <div class="container px-6 justify-between h-16 flex items-center lg:items-stretch mx-auto">
+      <div class="h-full flex items-center">
+        <h3 class="text-base text-gray-800 font-bold tracking-normal leading-tight ml-3 hidden lg:block">Rails-Hotwire</h3>
+      </div>
+    </div>   
+  </nav>
+
+  <div class="my-6 lg:my-12 container px-6 mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-between pb-4 border-b border-gray-300" >
+    <div>
+      <h4 class="text-2xl font-bold leading-tight text-gray-800"> Mensagem </h4>
+    </div>
+
+    <div class="mt-6 lg:mt-0">
+      <%= link_to 'New tt', new_tt_path, class: "transition duration-150 ease-in-out hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 border bg-indigo-700 rounded text-white px-8 py-2 text-sm" %>
+    </div>
   </div>
-
-  <div id="tts" class="min-w-full">
-    <%= render @tts %>
+  <div class="container mx-auto px-6">
+    <div id="tts" class="w-full rounded" >
+      <%= render @tts %>
+    </div>
   </div>
 </div>
